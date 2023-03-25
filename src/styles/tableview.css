@@ -1,0 +1,21 @@
+.table_view {
+  width: 100vw;
+  height: 7vh;
+}
+
+.icon {
+  width: 50px;
+  position: absolute;
+  right: 15%;
+  top: 18%;
+}
+
+.tableimg img {
+  width: 120px;
+}
+
+.whole_table {
+  width: 80vw;
+  text-align: center;
+  margin: auto;
+}

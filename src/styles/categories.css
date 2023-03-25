@@ -1,0 +1,14 @@
+.main_category {
+  display: flex;
+  width: 10vw;
+  padding: 5px;
+}
+
+.main_category span svg {
+  padding-top: 7px;
+}
+
+.category_names {
+  display: flex !important;
+  justify-content: space-around;
+}
