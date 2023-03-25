@@ -7,7 +7,6 @@ function Productfilter({ message }) {
   const [search, setSearch] = useState(products);
   const [subCategory, setSubCategory] = useState([]);
   const [cat, setCat] = useState();
-  // const [subValue, setSubValue] = useState([""]);
 
   let check = message && message.toString().toLowerCase();
   React.useEffect(() => {
