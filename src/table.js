@@ -27,9 +27,9 @@ function TableImage({ message }) {
                 <th className="text-lg">Price</th>
               </tr>
             </thead>
-            {Tableproduts.map((data) => {
+            {Tableproduts.map((data, index) => {
               return (
-                <tbody key={data.id} className="border-b-2 border-slate-100">
+                <tbody key={index} className="border-b-2 border-slate-100">
                   <td>
                     <div className="flex items-center space-x-3">
                       <div className="avatar">
@@ -43,10 +43,10 @@ function TableImage({ message }) {
                     </div>
                   </td>
                   <td>
-                    <div className="font-bold">{data.name}</div>
+                    <div className="font-bold text-base">{data.name}</div>
                   </td>
                   <td>
-                    <div className="text-sm opacity-50">{data.price}</div>
+                    <div className="text-base opacity-50 ">{data.price}</div>
                   </td>
                 </tbody>
               );

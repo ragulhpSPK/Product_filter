@@ -7,6 +7,7 @@ function Productfilter({ message }) {
   const [search, setSearch] = useState(products);
   const [subCategory, setSubCategory] = useState([]);
   const [cat, setCat] = useState();
+  // const [subValue, setSubValue] = useState([""]);
 
   let check = message && message.toString().toLowerCase();
   React.useEffect(() => {
@@ -29,7 +30,11 @@ function Productfilter({ message }) {
       });
       setSearch(result);
     }
-  }, [message, cat]);
+
+    subCategory.forEach((data) => {
+      console.log(data);
+    });
+  }, [message, cat, check, subCategory]);
 
   const handleFilter = (e) => {
     let value = e.target.value;
@@ -42,7 +47,7 @@ function Productfilter({ message }) {
 
   return (
     <div>
-      <div className="w-screen flex items-center justify-around">
+      <div className="w-screen flex items-center justify-around ">
         <div className="flex  space-x-10">
           <select
             className="select w-[25vw] "
@@ -84,16 +89,20 @@ function Productfilter({ message }) {
         ) : (
           search.map((product) => {
             return (
-              <div className="card w-[350px] h-[350px] bg-base-100 shadow-xl text-center">
+              <div
+                className="card w-[350px] h-[350px] bg-base-100 shadow-xl text-center"
+                key={product.id}
+              >
                 <figure>
                   <img
                     src={product.imagesrc}
                     alt="Products"
                     className="pt-16 w-64"
+                    key={product.id}
                   />
                 </figure>
                 <div className="card-body ">
-                  <h2 className="card-title text-2xl m-auto">{product.name}</h2>
+                  <h2 className="card-title text-xl m-auto">{product.name}</h2>
                   <p className="text-xl text-slate-500">Price{product.price}</p>
                 </div>
               </div>

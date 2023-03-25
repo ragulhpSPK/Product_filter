@@ -1,9 +1,6 @@
-body {
-  background-color: rgb(219, 216, 216);
-}
-
 .product_filter {
-  height: 90vh;
+  min-height: 75vh;
+  max-height: fit-content;
   width: 100vw;
   text-align: center;
   display: grid;
@@ -13,6 +10,7 @@ body {
   justify-content: center;
   gap: 3vw;
   margin-top: 50px;
+  overflow: scroll;
 }
 
 .product_card {
