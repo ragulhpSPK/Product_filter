@@ -72,7 +72,7 @@ export const products = [
   {
     id: 9,
     name: "LG Tv",
-    category: "Electronics",
+    category: "footwears",
     subCategory: "Tv",
     price: 14999,
     imagesrc:
