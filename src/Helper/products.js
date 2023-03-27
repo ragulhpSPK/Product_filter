@@ -66,14 +66,13 @@ export const products = [
     category: "Electronics",
     subCategory: "Headsets",
     price: 156999,
-    imagesrc:
-      "https://o.remove.bg/downloads/f086e67a-4d2a-47a2-a489-39602a6fc402/png-transparent-macbook-pro-laptop-apple-macbook-electronics-rectangle-retina-display-removebg-preview.png",
+    imagesrc: "../assets/macpro.png",
   },
 
   {
     id: 9,
     name: "LG Tv",
-    category: "footwears",
+    category: "Electronics",
     subCategory: "Tv",
     price: 14999,
     imagesrc:
