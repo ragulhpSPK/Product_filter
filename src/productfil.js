@@ -7,6 +7,7 @@ function Productfilter({ message }) {
   const [search, setSearch] = useState(products);
   const [subCategory, setSubCategory] = useState([]);
   const [cat, setCat] = useState();
+  const [subCat, setSubCat] = useState();
 
   let check = message && message.toString().toLowerCase();
   React.useEffect(() => {
@@ -30,10 +31,16 @@ function Productfilter({ message }) {
       setSearch(result);
     }
 
-    subCategory.forEach((data) => {
-      console.log(data);
-    });
-  }, [message, cat, check, subCategory]);
+    if (subCat && message) {
+      let result = subCategory.filter((item) => {
+        return (
+          item.name.toLowerCase() === subCat.toLowerCase() &&
+          item.name.toLowerCase().includes(check)
+        );
+      });
+      setSearch(result);
+    }
+  }, [message, cat, check, subCategory, subCat]);
 
   const handleFilter = (e) => {
     let value = e.target.value;
@@ -42,6 +49,14 @@ function Productfilter({ message }) {
     });
     setCat(value);
     setSubCategory(result[0].subcat);
+  };
+
+  const handleFilterSub = (e) => {
+    let subValue = e.target.value;
+    // let subCategory.filter((res) => {
+    //  return res.name===subValue;
+    // });
+    setSubCat();
   };
 
   return (
@@ -63,7 +78,10 @@ function Productfilter({ message }) {
               );
             })}
           </select>
-          <select className="select w-[25vw]">
+          <select
+            className="select w-[25vw]"
+            onChange={(e) => handleFilterSub(e)}
+          >
             <option disabled selected>
               Sub Categories
             </option>
